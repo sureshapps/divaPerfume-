@@ -1,0 +1,62 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 80px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    padding: 0 80px;
+    z-index: 20;
+  
+    background: transparent;
+  }
+  
+  .nav-group {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .nav-group a {
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  
+    color: #d4af37;
+    opacity: 0.85;
+  
+    transition: opacity 0.3s ease;
+  }
+  
+  .nav-group a:hover {
+    opacity: 1;
+  }
+  
+  .nav-logo {
+    font-size: 22px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+  
+    color: #d4af37;
+  
+    font-family: "Playfair Display", serif;
+  }
+  
+  .navbar::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+    right: 80px;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(212, 175, 55, 0.4),
+      transparent
+    );
+  }
+  

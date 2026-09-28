@@ -1,0 +1,74 @@
+.hero {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slices {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .slice {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .layer {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    transition: transform 0.9s cubic-bezier(0.77, 0, 0.175, 1);
+  }
+  
+  .current {
+    transform: translateY(0);
+  }
+  
+  .slice:nth-child(odd) .next {
+    transform: translateY(100%);
+  }
+  
+  .slice:nth-child(even) .next {
+    transform: translateY(-100%);
+  }
+  
+  .animate .slice:nth-child(odd) .current {
+    transform: translateY(-100%);
+  }
+  
+  .animate .slice:nth-child(odd) .next {
+    transform: translateY(0);
+  }
+  
+  .animate .slice:nth-child(even) .current {
+    transform: translateY(100%);
+  }
+  
+  .animate .slice:nth-child(even) .next {
+    transform: translateY(0);
+  }
+  
+  .hero-arrow {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(8px);
+    color: white;
+    font-size: 28px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .slices[data-animating="false"] .layer {
+    transition: none;
+  }
+  
